@@ -18,6 +18,7 @@ import { GettingStartedComponent } from './common/getting-started/getting-starte
 import { ThemeStorage } from './theme/theme-storage';
 import { StyleManager } from './theme/style-manager';
 import { SharedModule } from './shared/shared.module';
+import { environment } from '../environments/environment';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,7 @@ import { SharedModule } from './shared/shared.module';
     BrowserModule,
     FormsModule,
     HttpModule,
-    RouterModule.forRoot(routes),
+    RouterModule.forRoot(routes, {useHash: environment.useHash}),
     Ng2PageScrollModule.forRoot(),
     BsDropdownModule.forRoot(),
     BrowserModule.withServerTransition({appId: 'ngx-bootstrap'})
